@@ -373,7 +373,7 @@ typedef NS_ENUM(NSUInteger, FBTestSnapshotFileNameType) {
         
 - (UIImage *)_renderView:(UIView *)view
 {
-#ifdef __IPHONE_7_0
+#if defined(__IPHONE_7_0) && !defined(__IPHONE_8_0)
   if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0);
     [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
